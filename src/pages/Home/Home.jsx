@@ -48,10 +48,15 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ display: 'flex' }}>
       {isLoading && <Loader />}
-      <PharmacyList pharmacies={pharmacies} />
-      <MedicineList medicines={medicines} addToCart={addToCart} />
+      <div style={{ flex: '0 0 30%', marginRight: '20px' }}>
+        <PharmacyList pharmacies={pharmacies} />
+      </div>
+      <div style={{ flex: '1' }}>
+        <MedicineList medicines={medicines} addToCart={addToCart} />
+      </div>
+
       {error && (
         <p style={{ textAlign: 'center', margin: 'auto' }}>Sorry. {error} 😭</p>
       )}

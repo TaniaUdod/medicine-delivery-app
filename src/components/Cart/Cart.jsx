@@ -1,5 +1,6 @@
 import { useCart } from '../hooks/useCart';
 import React from 'react';
+import { Card, Input, Price, Title } from './Cart.styled';
 
 const Cart = ({ handleQuantityChange }) => {
   const { cart, changeQuantity } = useCart();
@@ -10,19 +11,19 @@ const Cart = ({ handleQuantityChange }) => {
   };
 
   return (
-    <div>
+    <div style={{ height: '75vh', overflowY: 'scroll' }}>
       <ul>
         {cart.cartItems.map((item, index) => (
-          <li key={index}>
-            <p>{item.medicine.title}</p>
-            <p>Price ${item.price}</p>
-            <input
+          <Card key={index}>
+            <Title>{item.medicine.title}</Title>
+            <Price>Price: ${item.price}</Price>
+            <Input
               type="number"
               value={item.quantity}
               onChange={event => handleInputChange(event, item.medicine._id)}
               min="1"
             />
-          </li>
+          </Card>
         ))}
       </ul>
     </div>

@@ -23,8 +23,6 @@ export function CartProvider({ children }) {
   };
 
   const changeQuantity = (medicineId, newQuantity) => {
-    console.log(medicineId);
-
     const cartItem = cartItems.find(item => item.medicine._id === medicineId);
 
     if (!cartItem) return;
@@ -51,12 +49,18 @@ export function CartProvider({ children }) {
     ]);
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+    setTotalPrice(0);
+  };
+
   return (
     <CartContext.Provider
       value={{
         cart: { cartItems, totalPrice },
         addToCart,
         changeQuantity,
+        clearCart,
       }}
     >
       {children}

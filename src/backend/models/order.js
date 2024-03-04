@@ -18,18 +18,7 @@ const orderSchema = new Schema(
       type: String,
       required: true,
     },
-    title: {
-      type: String,
-      required: true,
-    },
-    quantity: {
-      type: Number,
-      required: true,
-    },
-    price: {
-      type: Number,
-      required: true,
-    },
+    items: [{ title: String, quantity: Number, price: Number }],
     totalPrice: {
       type: Number,
       required: true,

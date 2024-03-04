@@ -1,12 +1,19 @@
 import React from 'react';
+import {
+  FormContainer,
+  FormGroup,
+  Input,
+  Label,
+  TextArea,
+} from './CartForm.styled';
 
 const CartForm = ({ formData, handleInputChange }) => {
   return (
-    <div>
+    <FormContainer>
       <form>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
+        <FormGroup>
+          <Label htmlFor="name">Name:</Label>
+          <Input
             type="text"
             id="name"
             name="name"
@@ -14,10 +21,10 @@ const CartForm = ({ formData, handleInputChange }) => {
             onChange={handleInputChange}
             required
           />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="email">Email:</Label>
+          <Input
             type="email"
             id="email"
             name="email"
@@ -25,10 +32,10 @@ const CartForm = ({ formData, handleInputChange }) => {
             onChange={handleInputChange}
             required
           />
-        </div>
-        <div>
-          <label htmlFor="phone">Phone:</label>
-          <input
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="phone">Phone:</Label>
+          <Input
             type="tel"
             id="phone"
             name="phone"
@@ -36,19 +43,19 @@ const CartForm = ({ formData, handleInputChange }) => {
             onChange={handleInputChange}
             required
           />
-        </div>
-        <div>
-          <label htmlFor="address">Address:</label>
-          <textarea
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="address">Address:</Label>
+          <TextArea
             id="address"
             name="address"
             value={formData.address}
             onChange={handleInputChange}
             required
           />
-        </div>
+        </FormGroup>
       </form>
-    </div>
+    </FormContainer>
   );
 };
 

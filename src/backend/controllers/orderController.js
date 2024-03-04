@@ -2,16 +2,14 @@ const Order = require('../models/order.js');
 const ctrlWrapper = require('../helpers/ctrlWrapper.js');
 
 const addOrder = async (req, res, next) => {
-  const { name, email, phone, address, title, quantity, price, totalPrice } =
-    req.body;
+  const { name, email, phone, address, items, totalPrice } = req.body;
+
   const newOrder = new Order({
     name,
     email,
     phone,
     address,
-    title,
-    quantity,
-    price,
+    items,
     totalPrice,
   });
   await newOrder.save();

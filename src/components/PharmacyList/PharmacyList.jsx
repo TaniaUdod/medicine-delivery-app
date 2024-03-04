@@ -1,18 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { StyledLi, StyledLink } from './PharmacyList.styled';
 
 const PharmacyList = ({ pharmacies }) => {
   return (
     <div>
-      <h3>Shops</h3>
+      <h3 style={{ textAlign: 'center' }}>Shops</h3>
       <ul>
         {pharmacies.map(({ _id, name, phone }) => (
-          <li key={_id}>
-            <Link to={`/pharmacies`}>
+          <StyledLi key={_id}>
+            <StyledLink to={`/pharmacies`}>
               <p>{name}</p>
               <p>{phone}</p>
-            </Link>
-          </li>
+            </StyledLink>
+          </StyledLi>
         ))}
       </ul>
     </div>
