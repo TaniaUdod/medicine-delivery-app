@@ -1,5 +1,5 @@
-import { useCart } from '../hooks/useCart';
 import React from 'react';
+import { useCart } from '../hooks/useCart';
 import { Card, Input, Price, Title } from './Cart.styled';
 
 const Cart = ({ handleQuantityChange }) => {

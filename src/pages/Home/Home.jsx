@@ -1,7 +1,7 @@
+import React, { useEffect, useState } from 'react';
 import { getAllPharmacies } from '../../services/pharmaciesService';
 import { getAllMedicines } from '../../services/medicinesService';
 import Loader from '../../components/Loader/Loader';
-import React, { useEffect, useState } from 'react';
 import PharmacyList from '../../components/PharmacyList/PharmacyList';
 import MedicineList from '../../components/MedicineList/MedicineList';
 

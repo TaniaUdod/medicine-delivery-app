@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { orderService } from '../../services/ordersService';
+import { useCart } from '../../components/hooks/useCart';
 import Cart from '../../components/Cart/Cart';
 import CartForm from '../../components/CartForm/CartForm';
-import { useCart } from '../../components/hooks/useCart';
-import { orderService } from '../../services/ordersService';
 import Loader from '../../components/Loader/Loader';
 import { Button } from '../../components/MedicineList/MedicineList.styled';
 
