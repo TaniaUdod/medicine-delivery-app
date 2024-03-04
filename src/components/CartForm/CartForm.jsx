@@ -1,29 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const CartForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-  });
-
-  const handleChange = event => {
-    const { name, value } = event.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    console.log(formData);
-  };
-
+const CartForm = ({ formData, handleInputChange }) => {
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div>
           <label htmlFor="name">Name:</label>
           <input
@@ -31,7 +11,7 @@ const CartForm = () => {
             id="name"
             name="name"
             value={formData.name}
-            onChange={handleChange}
+            onChange={handleInputChange}
             required
           />
         </div>
@@ -42,7 +22,7 @@ const CartForm = () => {
             id="email"
             name="email"
             value={formData.email}
-            onChange={handleChange}
+            onChange={handleInputChange}
             required
           />
         </div>
@@ -53,7 +33,7 @@ const CartForm = () => {
             id="phone"
             name="phone"
             value={formData.phone}
-            onChange={handleChange}
+            onChange={handleInputChange}
             required
           />
         </div>
@@ -63,7 +43,7 @@ const CartForm = () => {
             id="address"
             name="address"
             value={formData.address}
-            onChange={handleChange}
+            onChange={handleInputChange}
             required
           />
         </div>
