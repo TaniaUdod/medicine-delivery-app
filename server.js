@@ -2,6 +2,10 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
+const path = require('path');
+const configPath = path.join(__dirname, 'src', 'backend', 'config', '.env');
+require('dotenv').config({ path: configPath });
+
 const pharmacyRouter = require('./src/backend/routes/pharmacyRouter.js');
 const medicineRouter = require('./src/backend/routes/medicineRouter.js');
 const orderRouter = require('./src/backend/routes/orderRouter.js');
@@ -26,7 +30,7 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
-const PORT = 5000;
+const { PORT } = process.env;
 connectDB();
 
 app.listen(PORT, () => {
