@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import { CartProvider } from './hooks/useCart';
 
-const Home = lazy(() => import('pages/Home/Home'));
+const Home = lazy(() => import('../pages/Home/Home'));
 const ShoppingCart = lazy(() => import('../pages/ShoppingCart/ShoppingCart'));
 
 export const App = () => {
